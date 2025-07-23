@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "\"Gameboxd, A Letterboxd app for Video Games\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MalikShahry/GameBoxd.git"
+  },
+  "author": "Shahry Malik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MalikShahry/GameBoxd/issues"
+  },
+  "homepage": "https://github.com/MalikShahry/GameBoxd#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
