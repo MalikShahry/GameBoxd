@@ -4,6 +4,19 @@
 }
 
 .NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
     color: #fff;
-    left: auto;
+    padding: 1rem;
+}
+
+.navbar-left {
+    text-align: left;
+}
+
+.navbar-right {
+    padding-left: 10px;
+    padding-right: 10px;
 }

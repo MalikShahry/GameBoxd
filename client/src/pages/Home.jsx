@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 
 function Home() {
     return(
+        <div>
         <header className='HomeHeader'>
             <NavBar></NavBar>
             <p>
@@ -12,9 +13,8 @@ function Home() {
           <p>Show the world your favourite games.</p>
             </p>
             
-            
-
         </header>
+        </div>
 
     );
 
