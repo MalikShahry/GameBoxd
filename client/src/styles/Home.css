@@ -3,3 +3,7 @@
     text-align: center;
     color: #fff;
 }
+
+.HomeHeader li {
+    list-style-type: none;
+}

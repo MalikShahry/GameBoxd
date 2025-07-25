@@ -1,22 +1,66 @@
-.NavHeader {
-    color:#fff;
-    left: auto;
+
+.NavBar h1 section {
+    display: inline;
+    position: fixed;
+    
 }
+
+.NavHeader {
+  position: relative;
+  float: left;
+  font-size: 15px;
+  width: 1920px;
+  height: 75px;
+  z-index: 1110;
+  position: fixed;
+  top: 0px;
+}
+
+.NavSection {
+    width: 1920px;
+    height: 75px;
+    /*
+    background-color: rgba(0, 0, 0, 0.337);
+    */
+    position: fixed;
+    top: 0px;
+}
+
 
 .NavBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
     color: #fff;
     padding: 1rem;
+    position: fixed;
+    top: 0px;
+    height: 50px;
+    margin-left: 600px;
 }
 
-.navbar-left {
-    text-align: left;
+.NavItems li {
+    color: #b6b6b6;
+    display: inline;
+    padding: 0px;
+    text-align: center;
+    vertical-align:top;
 }
 
-.navbar-right {
-    padding-left: 10px;
-    padding-right: 10px;
+.NavItems a {
+    float: left;
+    color: #e5e4e48d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.NavItems a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.SiteLogo a {
+    color: white;
+    text-decoration: none;
 }

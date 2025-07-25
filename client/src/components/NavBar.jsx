@@ -1,30 +1,51 @@
 import React from 'react';
 import '../styles/NavBar.css';
+import { Link } from 'react-router-dom';
+
+
 
 function NavBar() {
 
     return(
-    
-        <nav className='NavBar'>
-            <div className="navbar-right">
-                <a href="/" className="logo">
-                    GameBoxd </a>
-            </div>
-            
-            <div className='navbar-right'>
+        <header class='NavHeader'>
+            <section class='NavSection'>
 
-                <a href='/'>Sign In </a>
-                
-                <a href='/'>Create Account </a>
-            
-                <a href='/'>Games </a>
-                
-                <a href='/'>Lists </a>
-                
-                
-            </div>
-        
-        </nav>
+                <div class='NavDiv'>
+                    <nav class='NavBar'>
+
+                        <h1 class="SiteLogo">
+                            <a href="/" className="logo"> GameBoxd 
+                            </a>
+                        </h1>
+                        
+                        <ul class='NavItems'>
+
+                            <li>
+                            <Link to='/login'>Sign In</Link>
+                            </li>
+                            
+                            <li>
+                            <Link to='/createAccount'>Create Account</Link>
+                            </li>
+                        
+                            <li>
+                            <Link to='/games'>Games</Link>
+                            </li>
+                            
+                            <li>
+                            <Link to='/lists'>Lists</Link>
+                            </li>
+
+                            <li>
+                            <Link to='/profile'>Profile</Link>
+                            </li>
+                                
+                        </ul>
+                    
+                    </nav>
+                </div>
+            </section>
+        </header>
     );
 
 }

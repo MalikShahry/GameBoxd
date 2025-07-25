@@ -4,17 +4,16 @@ import NavBar from '../components/NavBar';
 
 function Home() {
     return(
-        <div>
-        <header className='HomeHeader'>
-            <NavBar></NavBar>
-            <p>
-          <p>Track games you've played.</p>
-          <p>Add games to your backlog.</p>
-          <p>Show the world your favourite games.</p>
-            </p>
-            
+        <header>
+            <div className='HomeHeader'>
+                <ul>
+                <li>Track games you've played.</li>
+                <li>Add games to your backlog.</li>
+                <li>Show the world your favourite games.</li>
+                </ul>
+                
+            </div>
         </header>
-        </div>
 
     );
 
