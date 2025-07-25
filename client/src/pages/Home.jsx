@@ -1,19 +1,36 @@
 import React from 'react';
 import '../styles/Home.css'
-import NavBar from '../components/NavBar';
+import backgroundImage from '../assets/nightreign.webp'
 
 function Home() {
+
+
     return(
-        <header>
-            <div className='HomeHeader'>
-                <ul>
-                <li>Track games you've played.</li>
-                <li>Add games to your backlog.</li>
-                <li>Show the world your favourite games.</li>
-                </ul>
+
+        <div>
+
+            <div class='BackDrop'>
                 
+                <img src={backgroundImage} alt='background'/>
+
             </div>
-        </header>
+
+            <div className='HomeHeader'>
+                    <h2>
+                    Track games you've played.
+                    <br/>
+                    Add games to your backlog.
+                    <br/>
+                    Show the world your favourite games.
+                    </h2>              
+            </div>
+
+            <section class='Featured'>
+
+
+            </section>
+
+        </div>
 
     );
 

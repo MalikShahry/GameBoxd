@@ -4,6 +4,39 @@
     color: #fff;
 }
 
-.HomeHeader li {
+.HomeHeader h2 {
     list-style-type: none;
+    position: relative;
+    bottom: 150px;
+}
+
+.BackDrop {
+    display: block;
+    width: 1000px;
+    height: 600px;
+    margin-top:75px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BackDrop img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    opacity: 50%;
+    -webkit-mask-image: 
+        linear-gradient(to right, transparent, black 20%, black 80%, transparent),
+        linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-composite: intersect;
+    mask-composite: intersect;
+    mask-image: 
+        linear-gradient(to right, transparent, black 20%, black 80%, transparent),
+        linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    mask-composite: intersect;
 }
