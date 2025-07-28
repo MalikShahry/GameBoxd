@@ -1,23 +1,22 @@
 
-.HomeHeader {
-    text-align: center;
-    color: #fff;
-}
 
-.HomeHeader h2 {
-    list-style-type: none;
-    position: relative;
-    bottom: 150px;
+.HomeHeader {
+  margin-top: -75px; /* move upward visually */
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white; /* make text visible on the image */
 }
 
 .BackDrop {
     display: block;
-    width: 1000px;
     height: 600px;
     margin-top:75px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    /*position: relative;
+    */
 }
 
 .BackDrop img {
@@ -39,4 +38,26 @@
         linear-gradient(to right, transparent, black 20%, black 80%, transparent),
         linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
     mask-composite: intersect;
+}
+
+.Featured {
+    height: 200px;
+    position: static;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.Featured li {
+    display: inline;
+    text-align: center;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+
+}
+
+.gameImage {
+    width: 10px;
+    height: 50px;
 }

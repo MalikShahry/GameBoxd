@@ -16,6 +16,17 @@
   top: 0px;
 }
 
+.SiteLogo img {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.SiteLogo a {
+    padding: 4px;
+    color: white;
+    text-decoration: none;
+}
+
 .NavSection {
     width: 1920px;
     height: 75px;
@@ -34,7 +45,7 @@
     color: #fff;
     padding: 1rem;
     position: fixed;
-    top: 0px;
+    top: 5px;
     height: 50px;
     margin-left: 600px;
 }
@@ -58,9 +69,4 @@
 
 .NavItems a:hover {
     color: rgb(255, 255, 255);
-}
-
-.SiteLogo a {
-    color: white;
-    text-decoration: none;
 }
