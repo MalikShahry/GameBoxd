@@ -13,6 +13,7 @@ function Home() {
 
 
     // Pull from RAWG API, return the first 5 games from the RAWG db
+ 
     useEffect(() => {
         axios.get(getGamesURL)
         .then(response => {
@@ -22,7 +23,6 @@ function Home() {
             console.error(error)
         });
     }, []);
-
 
     return(
 
@@ -44,19 +44,16 @@ function Home() {
                     </h2>              
                 </div>
 
-            <section class='Featured'>
-                <ul class='poster'>
-                    {games.map(game => (
-                        <li key={game.id}>{game.name}</li>
+           <section className='Featured'>
+                <ul className='poster'>
+                    {games.map((game) => (
+                    <li key={game.id} className='poster-item'>
+                        <img src={game.background_image} alt={game.name} className='poster-image' />
+                        <p className='poster-title'>{game.name}</p>
+                    </li>
                     ))}
-
-                    <div>
-
-                    </div>
-
                 </ul>
             </section>
-
         </div>
 
     );
