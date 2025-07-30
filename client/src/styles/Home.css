@@ -1,7 +1,7 @@
 
 
 .HomeHeader {
-  margin-top: -75px; /* move upward visually */
+  margin-top: -150px; /* move upward visually */
   position: relative;
   z-index: 2;
   text-align: center;
@@ -15,8 +15,7 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    /*position: relative;
-    */
+
 }
 
 .BackDrop img {
@@ -72,7 +71,7 @@
 
 .poster {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.5rem;
   list-style: none;
   padding: 0;
 }
@@ -84,16 +83,170 @@
   color: white;
 }
 
+.poster-container {
+  position: relative;
+  display: inline-block;
+}
+
+.poster .game-meta li {
+  display: block;
+  color: #fff;
+  font-size: 1.84615385rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1;
+  text-indent: 0;
+  position: relative;
+}
+
 .poster-image {
   width: 100%;
-  height: 375px;
+  height: 200px;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.poster-image:hover {
+  opacity: 0.3;
+  transition: 0.3s ease;
 }
 
 .poster-title {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+.featured-ratings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.featured-ratings ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featured-ratings li {
+  display: inline;
+  text-align: center;
+  justify-content: center;
+  left: 0%;
+  right: 1%;
+  padding: 0;
+  margin: 0;
+}
+
+
+.poster-container:hover .featured-ratings {
+  opacity: 1;
+}
+
+.rating {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.game-ratings {
+  right: 12%;
+}
+
+.game-ratings:hover {
+  transition: 2s ease;
+}
+
+.highlights {
+  height: 300px;
+  width: 1500px;
+  margin: auto;
+  background-color: #02102e
+
+}
+
+.highlights h2 {
+  text-align: left;
+  font-size: px;
+}
+
+.highlight-buttons {
+  background-color: #3c4a56;
+  padding: 16px;
+  border-radius: 4px;
+  color: #d8e0e7;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+
+.highlights {
+  background-color: #061730df; /* dark background like Letterboxd */
+  color: #d8e0e7;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.highlights h2 {
+  color: #8c98a4;
+  font-size: 18px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: auto;
+  gap: 16px;
+  max-width: 1200px;
+}
+
+.highlight-card {
+  background-color: #3c4a56;
+  padding: 40px;
+  border-radius: 4px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 24px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.highlight-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
 }

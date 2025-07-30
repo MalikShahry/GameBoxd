@@ -13,7 +13,6 @@ function Home() {
 
 
     // Pull from RAWG API, return the first 5 games from the RAWG db
- 
     useEffect(() => {
         axios.get(getGamesURL)
         .then(response => {
@@ -25,13 +24,9 @@ function Home() {
     }, []);
 
     return(
-
         <div>
-
             <div class='BackDrop'>
-                
                 <img src={backgroundImage} alt='background'/>
-
             </div>
 
             <div className='HomeHeader'>
@@ -48,12 +43,65 @@ function Home() {
                 <ul className='poster'>
                     {games.map((game) => (
                     <li key={game.id} className='poster-item'>
-                        <img src={game.background_image} alt={game.name} className='poster-image' />
-                        <p className='poster-title'>{game.name}</p>
+                        <div class='poster-container'>
+                            <img src={game.background_image} alt={game.name} className='poster-image' />
+                            <p className='poster-title'>{game.name}</p>
+                        
+                            <div class='featured-ratings'>
+                                <ul class='game-meta'>
+                                    <li class="game-ratings">
+                                        <span class='rating'>Rating: </span>
+                                        <strong>⭐{game.rating} / 5.00</strong>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
                     </li>
                     ))}
                 </ul>
             </section>
+
+            <section class="highlights">
+                <h2>GameBoxd lets you...</h2>
+
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                    <span class="icon">🎮</span>
+                    <p>Keep track of every game you've ever played</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">❤️</span>
+                    <p>Show some love for your favourite games, lists, and reviews with a "like"</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">⭐</span>
+                    <p>Rate games on a five-star scale to record and share your reaction</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">📅</span>
+                    <p>Keep a backlog of the games you are dying to play</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">📝</span>
+                    <p>Write reviews and share your opinions with friends</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">📊</span>
+                    <p>Track your stats and gaming history over time</p>
+                    </div>
+                </div>
+            </section>
+
+
+
+
         </div>
 
     );
