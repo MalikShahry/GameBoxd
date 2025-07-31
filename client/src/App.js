@@ -34,14 +34,7 @@ function App() {
           <Route path='/profile' element={<Profile/>}></Route>
         </Routes>
     
-        <a
-          className="App-link"
-          href="https://github.com/MalikShahry/GameBoxd.git"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GameBoxd
-        </a>
+    
       </header>
     </div>
   );

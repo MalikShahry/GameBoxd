@@ -24,7 +24,7 @@ function Home() {
     }, []);
 
     return(
-        <div>
+        <div class='home'>
             <div class='BackDrop'>
                 <img src={backgroundImage} alt='background'/>
             </div>
@@ -37,7 +37,14 @@ function Home() {
                     <br/>
                     Show the world your favourite games.
                     </h2>              
-                </div>
+            </div>
+
+            <div class="create-account">
+                <a href='/createAccount'>
+                    <button class='create-account-button'>Get started - it's free!</button>
+                </a>
+
+            </div>
 
            <section className='Featured'>
                 <ul className='poster'>
@@ -99,6 +106,13 @@ function Home() {
                 </div>
             </section>
 
+            <div class="get-started">
+                <h2>Start your gaming journey now...</h2>
+                <a href='/createAccount'>
+                    <button class='create-account-button'>Create your account</button>
+                </a>
+
+            </div>
 
 
 
