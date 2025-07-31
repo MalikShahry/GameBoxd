@@ -26,24 +26,15 @@ function App() {
       <header className="App-header">
         <NavBar/>
         <Routes>
-          <Route path="/" ></Route>
+          <Route path="/" element={<Home/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/createAccount' element={<CreateAccount/>}></Route>
           <Route path='/games' element={<GamePage/>}></Route>
           <Route path='/lists' element={<GameLists/>}></Route>
           <Route path='/profile' element={<Profile/>}></Route>
         </Routes>
-
-        <Home/>
     
-        <a
-          className="App-link"
-          href="https://github.com/MalikShahry/GameBoxd.git"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GameBoxd
-        </a>
+    
       </header>
     </div>
   );

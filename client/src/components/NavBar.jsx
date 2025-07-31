@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/NavBar.css';
 import { Link } from 'react-router-dom';
+import logo from '../assets/gameboxdLogo.png'
 
 
 
@@ -14,6 +15,7 @@ function NavBar() {
                     <nav class='NavBar'>
 
                         <h1 class="SiteLogo">
+                            <img src={logo}></img>
                             <a href="/" className="logo"> GameBoxd 
                             </a>
                         </h1>

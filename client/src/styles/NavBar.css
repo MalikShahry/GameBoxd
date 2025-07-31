@@ -1,7 +1,6 @@
 
 .NavBar h1 section {
     display: inline;
-    position: fixed;
     
 }
 
@@ -12,8 +11,18 @@
   width: 1920px;
   height: 75px;
   z-index: 1110;
-  position: fixed;
   top: 0px;
+}
+
+.SiteLogo img {
+    height: 30px;
+    margin-top: 10px;
+}
+
+.SiteLogo a {
+    padding: 4px;
+    color: white;
+    text-decoration: none;
 }
 
 .NavSection {
@@ -22,7 +31,6 @@
     /*
     background-color: rgba(0, 0, 0, 0.337);
     */
-    position: fixed;
     top: 0px;
 }
 
@@ -34,7 +42,7 @@
     color: #fff;
     padding: 1rem;
     position: fixed;
-    top: 0px;
+    top: 5px;
     height: 50px;
     margin-left: 600px;
 }
@@ -57,10 +65,6 @@
 }
 
 .NavItems a:hover {
+    transition: 0.3s ease;
     color: rgb(255, 255, 255);
-}
-
-.SiteLogo a {
-    color: white;
-    text-decoration: none;
 }

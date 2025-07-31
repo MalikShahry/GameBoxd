@@ -1,19 +1,122 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../styles/Home.css'
-import NavBar from '../components/NavBar';
+import backgroundImage from '../assets/nightreign.webp'
+
 
 function Home() {
+    
+    const API_KEY = '843f0e17e8164a86acbbff609402c1fb';
+    const getGamesURL = `https://api.rawg.io/api/games?key=${API_KEY}`;
+
+    const [games, setFeaturedGames] = useState([]);
+
+
+    // Pull from RAWG API, return the first 5 games from the RAWG db
+    useEffect(() => {
+        axios.get(getGamesURL)
+        .then(response => {
+            setFeaturedGames(response.data.results.slice(0,5));
+        })
+        .catch(error => {
+            console.error(error)
+        });
+    }, []);
+
     return(
-        <header>
-            <div className='HomeHeader'>
-                <ul>
-                <li>Track games you've played.</li>
-                <li>Add games to your backlog.</li>
-                <li>Show the world your favourite games.</li>
-                </ul>
-                
+        <div class='home'>
+            <div class='BackDrop'>
+                <img src={backgroundImage} alt='background'/>
             </div>
-        </header>
+
+            <div className='HomeHeader'>
+                    <h2>
+                    Track games you've played.
+                    <br/>
+                    Add games to your backlog.
+                    <br/>
+                    Show the world your favourite games.
+                    </h2>              
+            </div>
+
+            <div class="create-account">
+                <a href='/createAccount'>
+                    <button class='create-account-button'>Get started - it's free!</button>
+                </a>
+
+            </div>
+
+           <section className='Featured'>
+                <ul className='poster'>
+                    {games.map((game) => (
+                    <li key={game.id} className='poster-item'>
+                        <div class='poster-container'>
+                            <img src={game.background_image} alt={game.name} className='poster-image' />
+                            <p className='poster-title'>{game.name}</p>
+                        
+                            <div class='featured-ratings'>
+                                <ul class='game-meta'>
+                                    <li class="game-ratings">
+                                        <span class='rating'>Rating: </span>
+                                        <strong>⭐{game.rating} / 5.00</strong>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </li>
+                    ))}
+                </ul>
+            </section>
+
+            <section class="highlights">
+                <h2>GameBoxd lets you...</h2>
+
+                <div class="highlight-grid">
+                    <div class="highlight-card">
+                    <span class="icon">🎮</span>
+                    <p>Keep track of every game you've ever played</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">❤️</span>
+                    <p>Show some love for your favourite games, lists, and reviews with a "like"</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">⭐</span>
+                    <p>Rate games on a five-star scale to record and share your reaction</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">📅</span>
+                    <p>Keep a backlog of the games you are dying to play</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">📝</span>
+                    <p>Write reviews and share your opinions with friends</p>
+                    </div>
+
+                    <div class="highlight-card">
+                    <span class="icon">📊</span>
+                    <p>Track your stats and gaming history over time</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="get-started">
+                <h2>Start your gaming journey now...</h2>
+                <a href='/createAccount'>
+                    <button class='create-account-button'>Create your account</button>
+                </a>
+
+            </div>
+
+
+
+        </div>
 
     );
 
