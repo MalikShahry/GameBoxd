@@ -9,19 +9,28 @@ function Home() {
     const API_KEY = '843f0e17e8164a86acbbff609402c1fb';
     const getGamesURL = `https://api.rawg.io/api/games?key=${API_KEY}`;
 
+    const getRatedGamesURL = "/api/games/ratedGames";
+
     const [games, setFeaturedGames] = useState([]);
 
 
     // Pull from RAWG API, return the first 5 games from the RAWG db
     useEffect(() => {
-        axios.get(getGamesURL)
+    axios.get(getRatedGamesURL)
         .then(response => {
-            setFeaturedGames(response.data.results.slice(0,5));
+        const data = response.data;
+
+        // Get specific items: 3rd, 7th, and 10th
+        const selectedGames = [data[3], data[4], data[5], data[11], data[10]];
+
+        setFeaturedGames(selectedGames);
+        console.log(selectedGames);
         })
         .catch(error => {
-            console.error(error)
+        console.error(error);
         });
     }, []);
+
 
     return(
         <div class='home'>
@@ -51,14 +60,14 @@ function Home() {
                     {games.map((game) => (
                     <li key={game.id} className='poster-item'>
                         <div class='poster-container'>
-                            <img src={game.background_image} alt={game.name} className='poster-image' />
-                            <p className='poster-title'>{game.name}</p>
+                            <img src={game.background_image} alt={game.title} className='poster-image' />
+                            <p className='poster-title'>{game.title}</p>
                         
                             <div class='featured-ratings'>
                                 <ul class='game-meta'>
                                     <li class="game-ratings">
                                         <span class='rating'>Rating: </span>
-                                        <strong>⭐{game.rating} / 5.00</strong>
+                                        <strong>⭐{game.ratings} / 5.00</strong>
                                     </li>
 
                                 </ul>
