@@ -13,7 +13,6 @@ const pool = new Pool({
     database: 'gameboxd'
 });
 
-
 // connect Client
 const client = new Client({
     user: "postgres",
@@ -31,6 +30,5 @@ client
     .catch((err) => {
         console.error("Error connecting to database", err)
     });
-
 
 export default pool;
