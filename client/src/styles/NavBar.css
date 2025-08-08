@@ -5,10 +5,10 @@
 }
 
 .NavHeader {
-  position: relative;
+  position: fixed;
   float: left;
   font-size: 15px;
-  width: 1920px;
+  width: 100%;
   height: 75px;
   z-index: 1110;
   top: 0px;
