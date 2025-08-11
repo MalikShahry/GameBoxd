@@ -46,6 +46,8 @@
     list-style: none;
     padding: 15px;
     gap: 20px;
+    overflow: visible;
+    position: relative;
 }
 
 .poster-item {
@@ -57,11 +59,12 @@
 }
 
 .game-container {
-    height: 300px;
+    height: 240px;
     width: 300px;
-    overflow: hidden;
+    overflow: visible;
     background-color:rgba(0, 0, 0, 0.561);
     border-radius: 8px;
+    transition: height 0.5s ease;
 }
 
 .game-image {
@@ -84,4 +87,27 @@
 .game-info {
     text-align: left;
     margin-left: 10px;
+}
+
+.extra-game-info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease, max-height 0.5s ease;
+}
+
+.game-container:hover {
+    height: 500px;
+    
+}
+
+.game-container:hover .extra-game-info {
+    opacity: 1;
+    max-height: 550px;
+}
+
+.line-break {
+    border-top: 1px solid gray;
+    width: 95%;
+    margin: 10px 0 10px 0;
 }
