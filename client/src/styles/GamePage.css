@@ -39,9 +39,8 @@
 
 .games-poster {
     display: grid;
-    grid-auto-rows: 200px;
+    grid-auto-rows: auto;
     grid-template-columns: repeat(4, 300px);
-    grid-template-rows: repeat(5, 200px);
     width: max-content;
     margin: 0 auto;
     list-style: none;
@@ -58,8 +57,31 @@
 }
 
 .game-container {
-    height: 200px;
+    height: 300px;
     width: 300px;
-    background-color:black;
+    overflow: hidden;
+    background-color:rgba(0, 0, 0, 0.561);
     border-radius: 8px;
+}
+
+.game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
+}
+
+.container-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+    background: black;
+}
+
+.game-info {
+    text-align: left;
+    margin-left: 10px;
 }

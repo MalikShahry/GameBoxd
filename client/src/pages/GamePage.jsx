@@ -53,7 +53,13 @@ function GamePage() {
                     {games.map((game) => (
                      <li key ={game.id} className='poster-item'>
                         <div className="game-container">
+                            <div className='container-img'>
+                                <img src={game.background_image} alt={game.title} className="game-image"></img>
+                            </div>
+                            <div className="game-info">
                             <h3>{game.title}</h3>
+                            <h4>Release date:  {game.release_date}</h4>
+                            </div>
 
                         </div>
 
