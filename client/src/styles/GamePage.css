@@ -26,15 +26,20 @@
   gap: 15px; /* space between list items */
   padding: 0;
   margin: 0;
+
+  
 }
 
 
 .nav-bar-filters li {
     text-decoration: none;
     display: inline;
-    padding: 10px;
+    padding: 5px;
     list-style: none;
     font-size:18px;
+    background-color: rgb(52, 52, 52);
+    border-radius: 8px;
+    border-color: black;
 }
 
 .games-poster {
@@ -55,6 +60,7 @@
     display: block;
     margin: 0 auto;
     padding: 0;
+    position: relative;
     
 }
 
@@ -93,7 +99,13 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
+    position: absolute;
     transition: 0.5s ease, max-height 0.5s ease;
+    pointer-events: none; /* prevent blocking clicks unless visible */
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+    
 }
 
 .game-container:hover {

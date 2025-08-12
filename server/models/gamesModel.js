@@ -14,7 +14,7 @@ export async function getAllGames() {
 // Function to get highest rated games from DB
 export async function getHighestRatedGames() {
     const result = await pool.query(
-        "SELECT * FROM games ORDER BY games.ratings DESC LIMIT 50"
+        "SELECT * FROM games ORDER BY games.ratings DESC"
     );
 
     return result.rows;
@@ -24,6 +24,15 @@ export async function getHighestRatedGames() {
 export async function getGameById(id) {
   const result = await pool.query(
     'SELECT * FROM games WHERE id = $1',
+    [id]
+  );
+
+  return result.rows;
+}
+
+export async function getGenreById(id) {
+  const result = await pool.query(
+    "SELECT genre FROM games WHERE id = $1",
     [id]
   );
 

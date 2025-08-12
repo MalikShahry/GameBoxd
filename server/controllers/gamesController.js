@@ -26,8 +26,21 @@ export async function getRatedGames(req, res) {
     }
 }
 
-/*
-export async function getSpecificGame(req, res) {
-    return null
+export async function getPlatforms(req, res) {
+    try {
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({message: "Can't get platforms"});
+    }
 }
-    */
+
+export async function getGenres(req, res) {
+    try {
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({message: "Can't get genres"});
+    }
+
+}

@@ -3,29 +3,22 @@ import React from "react";
 import '../styles/GamePage.css'
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Pagination from "../components/Pagination";
 
 function GamePage() {
 
-    const ratedGamesURL = 'api/games/ratedGames';
+    
     const [games, setGames] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [gamesPerPage, setGamesPerPage] = useState(48);
 
-    function formatGenres(genresString) {
-        if (!genresString || typeof genresString !== "string") return "";
 
-        // Remove leading and trailing curly braces if they exist
-        const trimmed = genresString.startsWith("{") && genresString.endsWith("}")
-            ? genresString.slice(1, -1)
-            : genresString;
+    const ratedGamesURL = 'api/games/ratedGames';
 
-        // Now split by comma — this must be a string method
-        const genresArray = trimmed.length > 0 ? trimmed.split(",") : [];
+    const lastGameIndex = currentPage * gamesPerPage
+    const firstGameIndex = lastGameIndex - gamesPerPage;
 
-        // Map and add quotes
-        const quotedGenres = genresArray.map((g) => `"${g.trim()}"`);
-
-        return quotedGenres.join(", ");
-        
-    }
+    
 
 
     /*
@@ -49,6 +42,9 @@ function GamePage() {
     }, []);
 
 
+    const currentGames = games.slice(firstGameIndex, lastGameIndex);
+
+
     return(
         <div>
 
@@ -67,7 +63,7 @@ function GamePage() {
 
             <section className="games-grid">
                 <ul className="games-poster">
-                    {games.map((game) => (
+                    {currentGames.map((game) => (
                      <li key ={game.id} className='poster-item'>
                         <div className="game-container">
                             <div className='container-img'>
@@ -98,8 +94,14 @@ function GamePage() {
 
             </section>
 
-            <div class='page-numbers'>
-                <h4>page 1, 2</h4>
+            <div class='pagination'>
+                
+                    <Pagination
+                    gamesPerPage={gamesPerPage}
+                    totalGames={games.length}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                    />
 
             </div>
         </div>
@@ -107,6 +109,9 @@ function GamePage() {
     );
 
 }
+
+
+
 
 
 
